@@ -1,3 +1,14 @@
 body {
+    box-sizing: border-box;
     background: rgb(240, 234, 210);
+}
+
+.greeting {
+    margin: 10px auto;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
 }

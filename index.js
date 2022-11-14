@@ -1,26 +1,19 @@
-import LikeButton from "./component.js";
-
 'use strict';
 
-/*class LikeButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { liked: false };
-  }
+import LikeButton from "./component.js";
 
-  render() {
-    if (this.state.liked) {
-      return 'You liked this.';
-    }
+/*const domContainer = document.querySelector('#component_container');
+const root = ReactDOM.createRoot(domContainer);
+root.render(<LikeButton name = "Jhon"/>);*/
+function App() {
+  return React.createElement(
+    "div",
+    { className: "flex" },
+    React.createElement(LikeButton, { name: "Karter" }),
+    React.createElement(LikeButton, { name: "Judit" })
+  );
+}
 
-    return (
-      <button onClick={() => this.setState({ liked: true })}>
-        Нравится!
-      </button>
-    );
-  }
-}*/
-
-var domContainer = document.querySelector('#like_button_container');
+var domContainer = document.querySelector('#component_container');
 var root = ReactDOM.createRoot(domContainer);
-root.render(React.createElement(LikeButton, null));
+root.render(React.createElement(App, null));

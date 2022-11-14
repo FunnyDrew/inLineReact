@@ -15,24 +15,27 @@ var LikeButton = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (LikeButton.__proto__ || Object.getPrototypeOf(LikeButton)).call(this, props));
 
     _this.state = { liked: false };
+    _this.name = _this.props.name;
     return _this;
   }
 
   _createClass(LikeButton, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       var _this2 = this;
 
       if (this.state.liked) {
-        return 'You liked this.';
+        return "You liked this, " + this.name;
       }
 
       return React.createElement(
-        'button',
+        "button",
         { onClick: function onClick() {
             return _this2.setState({ liked: true });
           } },
-        '\u041D\u0440\u0430\u0432\u0438\u0442\u0441\u044F!'
+        "\u041D\u0440\u0430\u0432\u0438\u0442\u0441\u044F, ",
+        this.name,
+        "!"
       );
     }
   }]);
