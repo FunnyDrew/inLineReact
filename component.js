@@ -14,18 +14,44 @@ var LikeButton = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (LikeButton.__proto__ || Object.getPrototypeOf(LikeButton)).call(this, props));
 
+    _this.restartBtn = function () {
+      return _this.setState({ liked: false });
+    };
+
     _this.state = { liked: false };
     _this.name = _this.props.name;
     return _this;
   }
 
   _createClass(LikeButton, [{
+    key: "newbtn",
+    value: function newbtn() {
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "div",
+          null,
+          "You Liked this, ",
+          this.name
+        ),
+        React.createElement(
+          "button",
+          { onClick: this.restartBtn },
+          "Restart, ",
+          this.name,
+          "!"
+        )
+      );
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
       if (this.state.liked) {
-        return "You liked this, " + this.name;
+        //return `You liked this, ${this.name}`;
+        return this.newbtn();
       }
 
       return React.createElement(
