@@ -12,3 +12,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.bg-red {
+    background: rgb(250, 150, 150);
+}
